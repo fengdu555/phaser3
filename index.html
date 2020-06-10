@@ -1,20 +1,47 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-10 11:21:06
- * @LastEditTime: 2020-06-10 11:21:43
- * @LastEditors: your name
+ * @LastEditTime: 2020-06-10 14:48:48
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /github/phaser3-html/index.html
---> 
+-->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.15.1/dist/phaser-arcade-physics.min.js"></script>
+
+  <!-- 引入加载场景 -->
+  <script src="./scenes/load.js"></script>
+
 </head>
+
 <body>
-  
+  <div id='game'></div>
+
+  <script>
+    
+    const config = {
+      parent: 'game',
+      type: Phaser.AUTO,
+      width: 800,
+      height: 600,
+      physics: {
+        default: 'arcade',
+        arcade: {
+          gravity: { y: 200 }
+        }
+      },
+      scene: [LoadScene]
+    };
+
+    const game = new Phaser.Game(config);
+  </script>
 </body>
+
 </html>
